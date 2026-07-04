@@ -485,7 +485,8 @@
         }
 
         .teacher-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
         }
 
         .section-head {
@@ -522,36 +523,117 @@
           width: min(100% - 24px, 1180px);
         }
 
+        .teacher-grid {
+          gap: 12px;
+        }
+
         .teacher-card {
-          grid-template-columns: 126px minmax(0, 1fr);
-          gap: 14px;
+          grid-template-columns: 1fr;
+          gap: 0;
         }
 
         .photo {
-          min-height: 270px;
+          min-height: auto;
+          aspect-ratio: 5 / 4;
+        }
+
+        .photo img {
+          object-fit: contain;
+          object-position: center bottom;
         }
 
         .card-body {
-          padding: 18px 14px 18px 0;
+          padding: 14px 12px 16px;
+        }
+
+        .name-row {
+          gap: 6px;
+          margin-bottom: 6px;
         }
 
         h3 {
           font-size: 23px;
         }
+
+        .subject-chip {
+          padding: 4px 7px;
+          font-size: 11px;
+        }
+
+        .title {
+          margin-bottom: 8px;
+          font-size: 13px;
+          line-height: 1.35;
+        }
+
+        .style {
+          margin-bottom: 10px;
+          font-size: 12.5px;
+          line-height: 1.55;
+        }
+
+        .highlights {
+          gap: 5px;
+          margin-bottom: 10px;
+        }
+
+        .highlights li {
+          grid-template-columns: 10px minmax(0, 1fr);
+          gap: 5px;
+          font-size: 12.5px;
+          line-height: 1.45;
+        }
+
+        .highlights li::before {
+          width: 5px;
+          height: 5px;
+          margin-top: 6px;
+        }
+
+        .result {
+          border-left-width: 3px;
+          padding: 6px 8px;
+          font-size: 12px;
+          line-height: 1.45;
+        }
       }
 
       @media (max-width: 520px) {
+        main,
+        .hero-inner,
+        .topbar-inner {
+          width: min(100% - 18px, 1180px);
+        }
+
+        .teacher-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
         .teacher-card {
           grid-template-columns: 1fr;
         }
 
         .photo {
           min-height: auto;
-          aspect-ratio: 4 / 3;
+          aspect-ratio: 1 / 1.05;
         }
 
         .card-body {
-          padding: 0 18px 20px;
+          padding: 12px 10px 14px;
+        }
+
+        h3 {
+          font-size: 21px;
+        }
+
+        .style,
+        .highlights li {
+          font-size: 12px;
+        }
+
+        .result {
+          font-size: 11.5px;
         }
       }
     </style>
